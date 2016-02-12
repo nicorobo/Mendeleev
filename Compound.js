@@ -45,8 +45,21 @@ class Compound {
 			this.mass -= (quantity * element_data.mass);
 		}
 		return true;
+	}
 
+	clear () {
+		this.mass = 0;
+		this.elements = {};
+	}
 
+	toHTML () {
+		let html = '';
+		for (var element in this.elements) {
+			let quantity = this.elements[element]
+			html += element;
+			html += quantity <= 1 ? '' : '<sub>'+quantity+'</sub>';
+		}
+		return html;
 	}
 }
 

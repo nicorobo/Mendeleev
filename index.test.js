@@ -1,4 +1,5 @@
 // index.test.js
+
 'use strict'
 const expect = require('chai').expect;
 const ptable = require('./PeriodicTable.js');
@@ -107,6 +108,31 @@ describe('Compound.js', ()=> {
 			let c = new Compound({"Li": 2});
 			c.remove("Li");
 			expect(c.mass).equals(6.941)
+		})
+	})
+	describe('clear()', ()=> {
+		it('Resets mass', ()=> {
+			let c = new Compound({"Li": 2});
+			c.clear();
+			expect(c.mass).equals(0);
+		})
+		it('Resets elements', ()=> {
+			let c = new Compound({"Li": 2});
+			c.clear();
+			let length = Object.keys(c.elements).length
+			expect(length).equals(0)
+		})
+	})
+	describe('toHTML()', ()=> {
+		it('Returns valid html for single element', ()=> {
+			let c = new Compound({"Li": 2});
+			let html = c.toHTML();
+			expect(html).equals('Li<sub>2</sub>');
+		})
+		it('Return valid html for multiple elements', ()=> {
+			let c = new Compound({"Li": 2, "Cl": 4});
+			let html = c.toHTML();
+			expect(html).equals('Li<sub>2</sub>Cl<sub>4</sub>');
 		})
 	})
 })

@@ -13,6 +13,30 @@ class PeriodicTable {
 		}
 	}
 
+	static getGroup (group) {
+		if (elements[el]) {
+			return elements[el];
+		} else {
+			return null;
+		}
+	}
+
+	static getPeriod (period) {
+		if (elements[el]) {
+			return elements[el];
+		} else {
+			return null;
+		}
+	}
+
+	static getType (type) {
+		if (elements[el]) {
+			return elements[el];
+		} else {
+			return null;
+		}
+	}
+
 }
 
 module.exports = PeriodicTable;
