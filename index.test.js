@@ -32,7 +32,7 @@ describe('PeriodicTable.js', ()=> {
 	describe('getGroup()', ()=> {
 		it('Returns correct group', ()=> {
 			var group = ptable.getGroup(2);
-			expect(group).to.have.property('name', 'lithium');
+			expect(group.length).equals(6);
 		})
 
 		it('Returns null for invalid group', ()=> {
@@ -44,7 +44,7 @@ describe('PeriodicTable.js', ()=> {
 	describe('getPeriod()', ()=> {
 		it('Returns correct period', ()=> {
 			var period = ptable.getPeriod(3);
-			expect(period).to.have.property('name', 'lithium');
+			expect(period.length).equals(8);
 		})
 
 		it('Returns null for invalid period', ()=> {
@@ -56,12 +56,12 @@ describe('PeriodicTable.js', ()=> {
 	describe('getType()', ()=> {
 		it('Returns correct type', ()=> {
 			var type = ptable.getType("halogen");
-			expect(element).to.have.property('name', 'lithium');
+			expect(type.length).equals(6);
 		})
 
 		it('Returns null for invalid type', ()=> {
-			var element = ptable.getType("halatoot");
-			expect(element).to.be.null;
+			var type = ptable.getType("halatoot");
+			expect(type).to.be.null;
 		})
 	})
 
