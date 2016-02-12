@@ -25,9 +25,27 @@ describe('Compound.js', ()=> {
 			let c = new Compound();
 			expect(c).to.not.be.null;
 		})
-		it('Initial weight is 0', ()=> {
+		it('Initial mass is 0', ()=> {
 			let c = new Compound();
 			expect(c).to.have.property('mass', 0)
+		})
+	})
+	describe('new Compound(element_list)', ()=> {
+		const element_list = {
+			"Li": 3,
+			"Cl": 1
+		}
+		it('The new keyword works', ()=> {
+			let c = new Compound(element_list);
+			expect(c).to.not.be.null;
+		})
+		it('Correct initial mass', ()=> {
+			let c = new Compound(element_list);
+			expect(c).to.have.property('mass', 56.2730)
+		})
+		it('Elements are added to compound', ()=> {
+			let c = new Compound(element_list);
+			expect(c.elements.length).equals(2);
 		})
 	})
 	describe('add()', ()=> {
@@ -35,6 +53,11 @@ describe('Compound.js', ()=> {
 			let c = new Compound();
 			var added = c.add("Li");
 			expect(added).to.be.true;
+		})
+		it('Invalid element is not added', ()=> {
+			let c = new Compound();
+			var added = c.add("Aa");
+			expect(added).to.be.false;
 		})
 		it('Correct element is added to compound', ()=> {
 			let c = new Compound();
@@ -49,8 +72,41 @@ describe('Compound.js', ()=> {
 		it('Multiple of same element', ()=> {
 			let c = new Compound();
 			c.add("Li");
-			c.add("Li")
+			c.add("Li");
 			expect(c.elements["Li"]).equals(2)
+		})
+	})
+	describe('remove()', ()=> {
+		it('Element is removed from compound', ()=> {
+			let c = new Compound({"Li": 2});
+			var removed = c.remove("Li");
+			expect(removed).to.be.true;
+		})
+		it('Invalid element is not removed', ()=> {
+			let c = new Compound({"Li": 2});
+			var removed = c.remove("Aa");
+			expect(removed).to.be.false;
+		})
+		it('Element at 0 is not removed', ()=> {
+			let c = new Compound({"Li": 1});
+			c.remove("Li");
+			var removed = c.remove("Li");
+			expect(removed).to.be.false;
+		})
+		it('Element removed from compound at 0', ()=> {
+			let c = new Compound({"Li": 1});
+			c.remove("Li");
+			expect(c.elements["Li"]).to.not.exist;
+		})
+		it('Correct element is removed from compound', ()=> {
+			let c = new Compound({"Li": 2});
+			c.remove("Li");
+			expect(c.elements["Li"]).equals(1);
+		})
+		it('Mass is updated', ()=> {
+			let c = new Compound({"Li": 2});
+			c.remove("Li");
+			expect(c.mass).equals('6.941')
 		})
 	})
 })
