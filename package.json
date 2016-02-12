@@ -1,0 +1,28 @@
+{
+  "name": "mendeleev",
+  "version": "1.0.0",
+  "description": "A virtual periodic table of the elements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha index.test.js -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickroberts404/Mendeleev.git"
+  },
+  "keywords": [
+    "science",
+    "chemistry",
+    "elements"
+  ],
+  "author": "Nick Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickroberts404/Mendeleev/issues"
+  },
+  "homepage": "https://github.com/nickroberts404/Mendeleev#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
