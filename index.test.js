@@ -71,8 +71,7 @@ describe('Compound.js', ()=> {
 		})
 		it('Multiple of same element', ()=> {
 			let c = new Compound();
-			c.add("Li");
-			c.add("Li");
+			c.add("Li", 2);
 			expect(c.elements["Li"]).equals(2)
 		})
 	})
