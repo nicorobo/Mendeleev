@@ -106,7 +106,7 @@ describe('Compound.js', ()=> {
 		it('Mass is updated', ()=> {
 			let c = new Compound({"Li": 2});
 			c.remove("Li");
-			expect(c.mass).equals('6.941')
+			expect(c.mass).equals(6.941)
 		})
 	})
 })

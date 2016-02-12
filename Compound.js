@@ -26,13 +26,27 @@ class Compound {
 		} else {
 			this.elements[element] = quantity;
 		}
-		this.mass = this.mass + (quantity * element_data.mass);
+		this.mass += (quantity * element_data.mass);
 		return true;
 	}
 
 	remove (element, quantity) {
 		quantity = quantity || 1
-		return true
+		let element_data = elements[element];
+		if (!element_data || !this.elements[element]) {
+			return false;
+		} 
+		let elementCount = this.elements[element];
+		if (quantity >= elementCount) {
+			delete this.elements[element];
+			this.mass -= (elementCount * element_data.mass);
+		} else {
+			this.elements[element] -= quantity;
+			this.mass -= (quantity * element_data.mass);
+		}
+		return true;
+
+
 	}
 }
 
