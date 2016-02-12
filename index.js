@@ -1,7 +1,7 @@
 // index.js
 'use strict'
-const Compound = require('./Compound.js');
-const PeriodicTable = require('./PeriodicTable.js');
+const Compound = require('./lib/Compound.js');
+const PeriodicTable = require('./lib/PeriodicTable.js');
 
 module.exports = {
 	Compound: Compound,
