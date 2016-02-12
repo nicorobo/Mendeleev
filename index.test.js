@@ -45,7 +45,8 @@ describe('Compound.js', ()=> {
 		})
 		it('Elements are added to compound', ()=> {
 			let c = new Compound(element_list);
-			expect(c.elements.length).equals(2);
+			let length = Object.keys(c.elements).length
+			expect(length).equals(2);
 		})
 	})
 	describe('add()', ()=> {
@@ -67,7 +68,7 @@ describe('Compound.js', ()=> {
 		it('Mass is updated', ()=> {
 			let c = new Compound();
 			c.add("Li");
-			expect(c.mass).equals('6.941')
+			expect(c.mass).equals(6.941)
 		})
 		it('Multiple of same element', ()=> {
 			let c = new Compound();
