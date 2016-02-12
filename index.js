@@ -1,17 +1,9 @@
 // index.js
 'use strict'
-const elements = require('./data/elements.json');
+const Compound = require('./Compound.js');
+const PeriodicTable = require('./PeriodicTable.js');
 
-class PeriodicTable {
-
-	static getElement(el) {
-		if (elements[el]) {
-			return elements[el];
-		} else {
-			return null;
-		}
-	}
-
+module.exports = {
+	Compound: Compound,
+	PeriodicTable: PeriodicTable
 }
-
-module.exports = PeriodicTable;
