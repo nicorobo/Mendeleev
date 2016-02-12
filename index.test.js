@@ -8,7 +8,6 @@ const Compound = require('./Compound.js');
 describe('PeriodicTable.js', ()=> {
 	describe('getElement()', ()=> {
 		it('Returns correct element', ()=> {
-			console.log(ptable.getElement);
 			var element = ptable.getElement("Li");
 			expect(element).to.have.property('name', 'lithium');
 		})
@@ -18,6 +17,54 @@ describe('PeriodicTable.js', ()=> {
 			expect(element).to.be.null;
 		})
 	})
+	describe('getAtomic()', ()=> {
+		it('Returns correct element', ()=> {
+			var element = ptable.getAtomic(3);
+			expect(element).to.have.property('name', 'lithium');
+		})
+
+		it('Returns null for invalid element', ()=> {
+			var element = ptable.getAtomic(345);
+			expect(element).to.be.null;
+		})
+	})
+
+	describe('getGroup()', ()=> {
+		it('Returns correct group', ()=> {
+			var group = ptable.getGroup(2);
+			expect(group).to.have.property('name', 'lithium');
+		})
+
+		it('Returns null for invalid group', ()=> {
+			var group = ptable.getGroup(55);
+			expect(group).to.be.null;
+		})
+	})
+
+	describe('getPeriod()', ()=> {
+		it('Returns correct period', ()=> {
+			var period = ptable.getPeriod(3);
+			expect(period).to.have.property('name', 'lithium');
+		})
+
+		it('Returns null for invalid period', ()=> {
+			var period = ptable.getPeriod(96);
+			expect(period).to.be.null;
+		})
+	})
+
+	describe('getType()', ()=> {
+		it('Returns correct type', ()=> {
+			var type = ptable.getType("halogen");
+			expect(element).to.have.property('name', 'lithium');
+		})
+
+		it('Returns null for invalid type', ()=> {
+			var element = ptable.getType("halatoot");
+			expect(element).to.be.null;
+		})
+	})
+
 })
 
 describe('Compound.js', ()=> {

@@ -13,6 +13,14 @@ class PeriodicTable {
 		}
 	}
 
+	static getAtomic (el) {
+		if (elements[el]) {
+			return elements[el];
+		} else {
+			return null;
+		}
+	}
+
 	static getGroup (group) {
 		if (elements[el]) {
 			return elements[el];
