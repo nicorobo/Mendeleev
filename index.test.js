@@ -113,6 +113,11 @@ describe('Compound.js', ()=> {
 			c.add("Li");
 			expect(c.elements["Li"]).to.exist;
 		})
+		it('Element is added to elementList', ()=> {
+			let c = new Compound();
+			c.add("Li");
+			expect(c.elementsList.length).equals(1);
+		})
 		it('Mass is updated', ()=> {
 			let c = new Compound();
 			c.add("Li");
@@ -150,6 +155,12 @@ describe('Compound.js', ()=> {
 			let c = new Compound({"Li": 2});
 			c.remove("Li");
 			expect(c.elements["Li"]).equals(1);
+		})
+		it('Element is removed from elementList', ()=> {
+			let c = new Compound();
+			c.add("Li");
+			c.remove("Li");
+			expect(c.elementsList.length).equals(0);
 		})
 		it('Mass is updated', ()=> {
 			let c = new Compound({"Li": 2});
