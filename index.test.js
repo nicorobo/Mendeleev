@@ -2,8 +2,8 @@
 
 'use strict'
 const expect = require('chai').expect;
-const ptable = require('./lib/PeriodicTable.js');
-const Compound = require('./lib/Compound.js');
+const ptable = require('./index.js').PeriodicTable;
+const Compound = require('./index.js').Compound;
 
 describe('PeriodicTable.js', ()=> {
 	describe('getElement()', ()=> {
