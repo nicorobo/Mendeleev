@@ -2194,21 +2194,26 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var PeriodicTable = require('./PeriodicTable.js');
+
 var Utility = function () {
 	function Utility() {
 		_classCallCheck(this, Utility);
 	}
 
-	_createClass(Utility, [{
+	_createClass(Utility, null, [{
 		key: 'stringToElementList',
 		value: function stringToElementList(str) {
 			var list = {};
 			var matches = str.match(/(([A-Z]{1}[a-z]*)([0-9]*))/g);
-			for (i in matches) {
+			for (var i in matches) {
 				var fragment = matches[i];
 				var element = fragment.match(/([A-Z]{1}[a-z]*)/g);
-				var quantity = fragment.match(/([0-9]*)/g);
-				list[element] = parseInt(quantity);
+				if (PeriodicTable.getElement(element) === null) {
+					return null;
+				}
+				var quantity = fragment.match(/([0-9]+)/g) || 1;
+				list[element] = parseInt(quantity) + (list[element] || 0);
 			}
 			console.log(list);
 			return list;
@@ -2220,4 +2225,4 @@ var Utility = function () {
 
 module.exports = Utility;
 
-},{}]},{},[2]);
+},{"./PeriodicTable.js":4}]},{},[2]);
