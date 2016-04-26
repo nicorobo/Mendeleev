@@ -4,6 +4,7 @@
 const expect = require('chai').expect;
 const ptable = require('./index.js').PeriodicTable;
 const Compound = require('./index.js').Compound;
+const Utility = require('./index.js').Utility;
 
 describe('PeriodicTable.js', ()=> {
 	describe('getElement()', ()=> {
@@ -193,4 +194,18 @@ describe('Compound.js', ()=> {
 			expect(html).equals('Li<sub>2</sub>Cl<sub>4</sub>');
 		})
 	})
+})
+describe('Utility.js', ()=> {
+	describe('stringToElementList()', ()=> {
+		it('Returns correct element list', ()=> {
+			var elementList = Utility.stringToElementList("H2O");
+			expect(elementList).to.deep.equal({'H': 2, 'O': 1});
+		})
+
+		it('Returns null for invalid string', ()=> {
+			var elementList = Utility.stringToElementList("Hh2O");
+			expect(elementList).to.be.null;
+		})
+	})
+
 })

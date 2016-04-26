@@ -2013,13 +2013,15 @@ module.exports={
 
 var Compound = require('./lib/Compound.js');
 var PeriodicTable = require('./lib/PeriodicTable.js');
+var Utility = require('./lib/Utility.js');
 
 module.exports = {
 	Compound: Compound,
-	PeriodicTable: PeriodicTable
+	PeriodicTable: PeriodicTable,
+	Utility: Utility
 };
 
-},{"./lib/Compound.js":3,"./lib/PeriodicTable.js":4}],3:[function(require,module,exports){
+},{"./lib/Compound.js":3,"./lib/PeriodicTable.js":4,"./lib/Utility.js":5}],3:[function(require,module,exports){
 // Compound.js
 'use strict';
 
@@ -2184,4 +2186,38 @@ function filterElements(filter) {
 }
 module.exports = PeriodicTable;
 
-},{"../data/elements.json":1}]},{},[2]);
+},{"../data/elements.json":1}],5:[function(require,module,exports){
+// Utility.js
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Utility = function () {
+	function Utility() {
+		_classCallCheck(this, Utility);
+	}
+
+	_createClass(Utility, [{
+		key: 'stringToElementList',
+		value: function stringToElementList(str) {
+			var list = {};
+			var matches = str.match(/(([A-Z]{1}[a-z]*)([0-9]*))/g);
+			for (i in matches) {
+				var fragment = matches[i];
+				var element = fragment.match(/([A-Z]{1}[a-z]*)/g);
+				var quantity = fragment.match(/([0-9]*)/g);
+				list[element] = parseInt(quantity);
+			}
+			console.log(list);
+			return list;
+		}
+	}]);
+
+	return Utility;
+}();
+
+module.exports = Utility;
+
+},{}]},{},[2]);
