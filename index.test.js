@@ -119,11 +119,6 @@ describe('Compound.js', ()=> {
 			c.add("Li");
 			expect(c.elementsList.length).equals(1);
 		})
-		it('Mass is updated', ()=> {
-			let c = new Compound();
-			c.add("Li");
-			expect(c.getMass()).equals(6.94)
-		})
 		it('Multiple of same element', ()=> {
 			let c = new Compound();
 			c.add("Li", 2);
@@ -163,11 +158,6 @@ describe('Compound.js', ()=> {
 			c.remove("Li");
 			expect(c.elementsList.length).equals(0);
 		})
-		it('Mass is updated', ()=> {
-			let c = new Compound({"Li": 2});
-			c.remove("Li");
-			expect(c.getMass()).equals(6.94)
-		})
 	})
 	describe('clear()', ()=> {
 		it('Resets mass', ()=> {
@@ -180,6 +170,25 @@ describe('Compound.js', ()=> {
 			c.clear();
 			let length = Object.keys(c.elements).length
 			expect(length).equals(0)
+		})
+	})
+	describe('getMass()', ()=> {
+		it('Returns a number', ()=> {
+			let c = new Compound({"Li": 3, "Cl": 1});
+			let mass = c.getMass();
+			expect(mass).to.be.a('number');
+		})
+		it('Returns correct mass', ()=> {
+			let c = new Compound({"Li": 3, "Cl": 1});
+			let mass = c.getMass();
+			expect(mass).equals(56.27);
+		})
+	})
+	describe('getPercentages()', ()=> {
+		it('Returns an array', ()=> {
+			let c = new Compound({"Li": 3, "Cl": 1});
+			let percentages = c.getPercentages();
+			expect(percentages).to.be.instanceof(Array);
 		})
 	})
 	describe('toHTML()', ()=> {
