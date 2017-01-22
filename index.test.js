@@ -76,7 +76,7 @@ describe('Compound.js', ()=> {
 		})
 		it('Initial mass is 0', ()=> {
 			let c = new Compound();
-			expect(c).to.have.property('mass', 0)
+			expect(c.getMass()).equals(0);
 		})
 	})
 	describe('new Compound(element_list)', ()=> {
@@ -90,7 +90,7 @@ describe('Compound.js', ()=> {
 		})
 		it('Correct initial mass', ()=> {
 			let c = new Compound(element_list);
-			expect(c).to.have.property('mass', 56.2730)
+			expect(c.getMass()).equals(56.2730)
 		})
 		it('Elements are added to compound', ()=> {
 			let c = new Compound(element_list);
@@ -122,7 +122,7 @@ describe('Compound.js', ()=> {
 		it('Mass is updated', ()=> {
 			let c = new Compound();
 			c.add("Li");
-			expect(c.mass).equals(6.941)
+			expect(c.getMass()).equals(6.941)
 		})
 		it('Multiple of same element', ()=> {
 			let c = new Compound();
@@ -166,14 +166,14 @@ describe('Compound.js', ()=> {
 		it('Mass is updated', ()=> {
 			let c = new Compound({"Li": 2});
 			c.remove("Li");
-			expect(c.mass).equals(6.941)
+			expect(c.getMass()).equals(6.941)
 		})
 	})
 	describe('clear()', ()=> {
 		it('Resets mass', ()=> {
 			let c = new Compound({"Li": 2});
 			c.clear();
-			expect(c.mass).equals(0);
+			expect(c.getMass()).equals(0);
 		})
 		it('Resets elements', ()=> {
 			let c = new Compound({"Li": 2});
