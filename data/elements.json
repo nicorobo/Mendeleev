@@ -1903,9 +1903,9 @@
       "specificheat":"",
       "comment":""
    },
-   "Uut":{  
-      "name":"ununtrium",
-      "symbol":"Uut",
+   "Nh":{  
+      "name":"nihonium",
+      "symbol":"Nh",
       "type":"post-transition-metal",
       "number":"113",
       "mass":"286",
@@ -1937,9 +1937,9 @@
       "specificheat":"",
       "comment":""
    },
-   "Uup":{  
-      "name":"ununpentium",
-      "symbol":"Uup",
+   "Mc":{  
+      "name":"moscovium",
+      "symbol":"Mc",
       "type":"post-transition-metal",
       "number":"115",
       "mass":"289",
@@ -1971,9 +1971,9 @@
       "specificheat":"",
       "comment":""
    },
-   "Uus":{  
-      "name":"ununseptium",
-      "symbol":"Uus",
+   "Ts":{  
+      "name":"tennessine",
+      "symbol":"Ts",
       "type":"halogen",
       "number":"117",
       "mass":"293",
@@ -1988,9 +1988,9 @@
       "specificheat":"",
       "comment":""
    },
-   "Uuo":{  
-      "name":"ununoctium",
-      "symbol":"Uuo",
+   "Og":{  
+      "name":"oganesson",
+      "symbol":"Og",
       "type":"noble-gas",
       "number":"118",
       "mass":"294",
