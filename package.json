@@ -1,6 +1,6 @@
 {
   "name": "mendeleev",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A virtual periodic table of the elements.",
   "main": "index.js",
   "scripts": {
