@@ -1,5 +1,5 @@
 # Mendeleev
-A virtual periodic table of the elements module.
+A small library for working with element data and building compounds.
 
 ### PeriodicTable
 PeriodicTable contains information on individual elements.

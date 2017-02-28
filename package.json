@@ -1,7 +1,7 @@
 {
   "name": "mendeleev",
   "version": "1.2.1",
-  "description": "A virtual periodic table of the elements.",
+  "description": "A small library for working with element data and building compounds.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha index.test.js -w",
