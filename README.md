@@ -1,3 +1,4 @@
+<img src="https://dl.dropboxusercontent.com/s/m2ohwsvmfknup74/mendeleev-icon.png?dl=0" alt="logo" width="80px" />
 # Mendeleev
 A small library for working with element data and building compounds.
 
